@@ -7,6 +7,8 @@ type Product = {
   rating: number;
 };
 
+export const dynamic = "force-dynamic";
+
 type ProductsResponse = {
   products: Product[];
 };
@@ -41,7 +43,7 @@ function isProductsResponse(value: unknown): value is ProductsResponse {
 async function getProducts(): Promise<Product[]> {
   const apiUrl =
     process.env.DUMMYJSON_API_URL ??
-    "https://dummyjson.com/products?limit=12";
+    "https://dummyjson.com/products?limit=2";
   const response = await fetch(apiUrl);
 
   if (!response.ok) {
