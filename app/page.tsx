@@ -63,15 +63,7 @@ export default async function Home() {
     products = await getProducts();
   } catch (error) {
     console.error("Failed to load products from DummyJSON:", error);
-
-    return (
-      <main className="mx-auto w-full max-w-5xl px-6 py-12">
-        <h1 className="text-3xl font-semibold text-zinc-900">DummyJSON products</h1>
-        <p className="mt-4 text-zinc-600">
-          Products could not be loaded. Check the API URL and try again.
-        </p>
-      </main>
-    );
+    throw error;
   }
 
   return (

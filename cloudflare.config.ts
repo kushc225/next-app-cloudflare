@@ -10,6 +10,9 @@ export default defineConfig({
     env: {
       ASSETS: bindings.assets(),
       IMAGES: bindings.images(),
+      DUMMYJSON_API_URL: bindings.text(
+        "https://dummyjson.com/products?limit=2",
+      ),
     },
   }),
 });
